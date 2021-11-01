@@ -1,35 +1,36 @@
 import {
     initializeApp
 } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
 import {
-    getAuth
-} from 'firebase/auth'
-import {
-    getFirestore
-} from 'firebase/firestore'
+    getDatabase,
+    ref,
+    set
+} from "firebase/database"
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBqtbQY06i1Z3ezsilIN2HT3lpDtdbHSfU", // add to config file
-    authDomain: "vue-test-project-c6cd7.firebaseapp.com",
-    projectId: "vue-test-project-c6cd7",
-    storageBucket: "vue-test-project-c6cd7.appspot.com",
-    messagingSenderId: "1033036664141",
-    appId: "1:1033036664141:web:949fb8736943fc48237b04",
-    measurementId: "G-9MHMHFB3CQ"
+    apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
+    authDomain: process.env.VUE_APP_AUTH_DOMAIN,
+    projectId: process.env.VUE_APP_PROJECT_ID,
+    storageBucket: process.env.VUE_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.VUE_APP_MESSAGING_SENDER_ID,
+    appId: process.env.VUE_APP_APP_ID
 };
 const app = initializeApp(firebaseConfig);
 
-//utils 
-const db = getFirestore(app)
-const auth = getAuth(app)
-// const analytics = getAnalytics(app);
+const db = getDatabase(app)
 
-// collection references 
-const usersCollection = db.collection('users')
-console.log(process.env.FIREBASE_API_KEY)
-export {
-    db,
-    auth,
-    usersCollection
+export async function saveMessage(messageDto, test) {
+    try {
+      
+        set(ref(db, "messages/" + test), {
+            firstName: messageDto.firstName,
+            lastName: messageDto.lastName,
+            emailAddress: messageDto.emailAddress,
+            message: messageDto.message,
+        })
+    } catch (error) {
+      throw new error
+    }
 }
+
+
