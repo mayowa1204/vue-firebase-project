@@ -5,17 +5,18 @@
 - Install Node: https://nodejs.org/en/download/
 - Please install vue-Cli if you havent already: https://cli.vuejs.org/guide/installation.html
 
-Create an app and a realtime database in firbase
-Add all the neccesary values to your
+- Create an app in firebase
+- Create a realtime database in firebase
+- Add all the neccesary values to your
 
 ```bash
-$ .env file
+.env file
 ```
 
 please reference the
 
 ```bash
-$ .env-example file
+ .env-example file
 ```
 
 ## Project setup
