@@ -139,7 +139,7 @@ export default defineComponent({
 
     async function sendMessage() {
       try {
-        await saveMessage(messageDto.v, uuid.v4())
+        await saveMessage(messageDto, uuid.v4())
           .then(() => {
             resetDto();
             response.value = {
@@ -174,7 +174,4 @@ export default defineComponent({
   },
 });
 </script>
-<style scoped>
-.contact-card {
-}
-</style>
+<style scoped></style>
