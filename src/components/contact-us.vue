@@ -30,8 +30,8 @@
               rules.nameMinimumLength2,
               rules.nameMaximumLength50,
             ]"
-            v-model="messageDto.firstName"
-            label="First Name"
+            v-model="messageDto.name"
+            label="Name"
             type="text"
           >
           </v-text-field>
@@ -41,9 +41,9 @@
               rules.nameMinimumLength2,
               rules.nameMaximumLength50,
             ]"
-            v-model="messageDto.lastName"
+            v-model="messageDto.company"
             type="text"
-            label="Last Name"
+            label="Company Name"
           >
           </v-text-field>
           <v-text-field
@@ -97,8 +97,8 @@ import { uuid } from "vue-uuid";
 export default defineComponent({
   setup() {
     const messageDto = reactive({
-      firstName: "",
-      lastName: "",
+      name: "",
+      company: "",
       emailAddress: "",
       message: "",
     });
@@ -131,8 +131,8 @@ export default defineComponent({
       ),
     });
     function resetDto() {
-      messageDto.firstName = "";
-      messageDto.lastName = "";
+      messageDto.name = "";
+      messageDto.company = "";
       messageDto.emailAddress = "";
       messageDto.message = "";
     }
