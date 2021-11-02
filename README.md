@@ -21,10 +21,6 @@ please reference the
 
 ## Project setup
 
-```bash
-$ cd new-app
-```
-
 ```
 npm install
 ```
