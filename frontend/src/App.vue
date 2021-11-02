@@ -9,10 +9,13 @@
       </div>
 
       <v-spacer></v-spacer>
-      <router-link class="mr-2" to="/" style="color: white">Menu</router-link> |
-      <router-link class="ml-2" to="/contact-us" style="color: white"
-        >Contact Us</router-link
-      >
+      <div class="nav-links" style="width: 20vw">
+        <router-link class="mr-2" to="/" style="color: black">Menu</router-link>
+        |
+        <router-link class="ml-2" to="/contact-us" style="color: black"
+          >Contact Us</router-link
+        >
+      </div>
     </v-app-bar>
 
     <v-main>
@@ -30,3 +33,10 @@ export default {
   }),
 };
 </script>
+<style scoped>
+@media only screen and (max-width: 720px) {
+  .nav-links {
+    width: 40vw !important;
+  }
+}
+</style>

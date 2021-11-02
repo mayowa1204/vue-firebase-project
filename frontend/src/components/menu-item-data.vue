@@ -23,6 +23,7 @@
                 >
                   <img
                     contain
+                    style="width: 80%"
                     class="picture mx-auto"
                     aspect-ratio="1"
                     :src="image"
@@ -43,8 +44,10 @@
               ${{ currentMenuItem.prices.price.price }}
             </h2>
             <br />
-            <p class="mt-n3">{{ currentMenuItem.details }}</p>
-            <p style="float: right" class="mt-n3">
+            <p class="mt-n3" style="color: purple">
+              {{ currentMenuItem.details }}
+            </p>
+            <p style="float: right; color: blue" class="mt-n3">
               Menu Item ID: {{ currentMenuItem.menuitemid }}
             </p>
           </div>
@@ -157,7 +160,7 @@ export default defineComponent({
   setup() {
     onBeforeMount(() => {
       if (menuStore.state.item.name == undefined) {
-        router.push("menu");
+        router.push("/");
       }
     });
     const currentMenuItem = computed({
@@ -206,6 +209,8 @@ export default defineComponent({
 }
 .table-body {
   border: 0.2px solid black !important;
+  width: 70%;
+  margin: auto;
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1020px) {
   .heading {

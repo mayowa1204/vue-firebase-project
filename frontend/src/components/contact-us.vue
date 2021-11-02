@@ -76,8 +76,9 @@
           >
             <v-btn
               :disabled="!isFormValid"
-              class="button-md mx-auto"
+              class="mx-auto"
               x-large
+              style="background: red; color: white"
               type="submit"
               >Submit</v-btn
             >
